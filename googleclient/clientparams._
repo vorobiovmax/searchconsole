@@ -1,0 +1,11 @@
+<?PHP
+
+/*
+* Google client params: Client id, client secret, redirect url & site url
+*/
+
+$client_id = 'client id';
+$client_secret = 'client secret';
+$redirect = 'http://localhost/searchconsole/callback.php';
+$url = 'http://wearegeek.ru/';
+?>
