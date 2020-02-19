@@ -6,11 +6,11 @@ require_once 'initialize/init.php';
 * true -> redirect to demonstration
 * false -> create link for Google OAuth
 */
-
 session_start();
+
 if (array_key_exists('access_token',$_SESSION))
 {
-    header('Location: demo.php');
+   header('Location: demo.php');
 }
 else
 {

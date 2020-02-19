@@ -11,12 +11,25 @@ session_start();
 
 if (array_key_exists('access_token',$_SESSION))
 {
-    $info = $wearegeek->fetch('2020-01-01','2020-02-01');
+    $dates = parse_ini_file('dates.ini');
+
+    $fetch_start = $dates['fetch_start'];
+    $fetch_end = $dates['fetch_end'];
+    
+    $fetchMonth_month = (int)$dates['fetchMonth_month'];
+    $fetchMonth_year = (int)$dates['fetchMonth_year'];
+
+    /*
+    * fetch & fetchMonth demonstration 
+    */
+    $info = $wearegeek->fetch($fetch_start, $fetch_end);
+    //$info = $wearegeek->fetchMonth($fetchMonth_month, $fetchMonth_year);
+
     ?><pre><?=print_r($info);?></pre><?PHP
+
 }
 else
 {
-    session_destroy();
     header('Location: index.php');
 }
 

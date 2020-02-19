@@ -12,4 +12,8 @@ if($_GET['code'] )
     $wearegeek->acceptGoogleAuthCode($_GET['code']);
     header("Location: demo.php");
 }
+else
+{
+    header("Location: index.php");
+}
 ?>
